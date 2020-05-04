@@ -1,10 +1,9 @@
 import React from "react";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import ContactHeader from "components/Headers/ContactHeader";
 import DarkFooter from "components/Footers/DarkFooter.js";
-
-import Images from "./index-sections/Images.js";
+import ContactForm from "components/Contact/ContactForm";
 
 function ContactMe() {
   React.useEffect(() => {
@@ -22,10 +21,8 @@ function ContactMe() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
-        <div className="main">
-          <Images />
-        </div>
+        <ContactHeader />
+        <ContactForm />
         <DarkFooter />
       </div>
     </>

@@ -9,11 +9,11 @@ import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
 import Index from "views/Index.js";
+import AboutMe from "views/AboutMe.js";
 import ContactMe from "views/ContactMe.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
 import LandingPage from "views/examples/LandingPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,7 +24,7 @@ ReactDOM.render(
           path="/contact-me"
           render={(props) => <ContactMe {...props} />}
         />
-        <Route path="/about-me" render={(props) => <ContactMe {...props} />} />
+        <Route path="/about-me" render={(props) => <AboutMe {...props} />} />
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
@@ -32,10 +32,6 @@ ReactDOM.render(
         <Route
           path="/landing-page"
           render={(props) => <LandingPage {...props} />}
-        />
-        <Route
-          path="/profile-page"
-          render={(props) => <ProfilePage {...props} />}
         />
         <Route
           path="/login-page"

@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container, Button, ButtonGroup } from "reactstrap";
 // core components
 
 function IndexHeader() {
@@ -49,7 +49,39 @@ function IndexHeader() {
             <h1 className="h1-seo">
               <b>BgyTanod</b>
             </h1>
-            <h3>Farming Mirror Everyday</h3>
+            <h4>Farming Mirror Everyday</h4>
+            <div className="shortcuts">
+              <ButtonGroup>
+                <Button
+                  color="link"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("swag-here").scrollIntoView({
+                      behavior: "smooth",
+                      block: "end",
+                      inline: "start",
+                    });
+                  }}
+                >
+                  <i className="next-i now-ui-icons arrows-1_minimal-down" />
+                  <span>My swag</span>
+                </Button>
+                <Button
+                  color="link"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("pics-here").scrollIntoView({
+                      behavior: "smooth",
+                      block: "end",
+                      inline: "start",
+                    });
+                  }}
+                >
+                  <i className="next-i now-ui-icons arrows-1_minimal-down" />
+                  <span>My pics</span>
+                </Button>
+              </ButtonGroup>
+            </div>
           </div>
         </Container>
       </div>
@@ -66,5 +98,22 @@ const StyledWrapper = styled.div`
     text-decoration: none;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: #dfcf99;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin-top: 0px;
+  }
+
+  .next-i {
+    padding-right: 8px;
+  }
+
+  .shortcuts .btn.btn-link {
+    color: #dfcf99;
+    font-weight: 700;
   }
 `;

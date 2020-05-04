@@ -1,10 +1,9 @@
 import React from "react";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import AboutMeHeader from "components/Headers/AboutMeHeader.js";
+import AboutMeDetails from "components/About/AboutMeDetails.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-
-import Images from "./index-sections/Images.js";
 
 function AboutMe() {
   React.useEffect(() => {
@@ -22,10 +21,8 @@ function AboutMe() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
-        <div className="main">
-          <Images />
-        </div>
+        <AboutMeHeader />
+        <AboutMeDetails />
         <DarkFooter />
       </div>
     </>

@@ -27,8 +27,8 @@ const items = [
   },
   {
     src: require("assets/img/bg3.jpg"),
-    altText: "My dear friend, Alma",
-    caption: "My dear friend, Alma",
+    altText: "My best pal, Alma",
+    caption: "My best pal, Alma",
   },
   {
     src: require("assets/img/bg4.jpg"),
@@ -61,7 +61,7 @@ function CarouselSection() {
     setActiveIndex(newIndex);
   };
   return (
-    <Wrapper>
+    <Wrapper id="pics-here">
       <div className="section" id="carousel">
         <Container>
           <div className="title">

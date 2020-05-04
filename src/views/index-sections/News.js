@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-let News = ({ title, date, content }) => {
+let News = ({ title, date, content, maxWidth = "990px" }) => {
   return (
-    <Wrapper>
+    <Wrapper maxWidth={maxWidth}>
       <h2 className="title" style={{ cursor: "pointer" }}>
         {title}
       </h2>
-      <div className="date">{date}</div>
+      {date && <div className="date">{date}</div>}
       <div className="content">{content}</div>
     </Wrapper>
   );
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-color: #0c0b0b;
   position: relative;
   color: #a38d6d;
-  max-width: 990px;
+  max-width: ${(props) => props.maxWidth};
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 
   .title {
-    margin-right: 190px;
+    margin-right: 20px;
     margin-bottom: 2px;
   }
 

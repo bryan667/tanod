@@ -81,7 +81,7 @@ function IndexNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink href="/" onClick={() => {}}>
+                <NavLink href="/index" onClick={() => {}}>
                   <i className="now-ui-icons location_world"></i>
                   <p>Home</p>
                 </NavLink>
@@ -94,14 +94,19 @@ function IndexNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="#wat"
+                  href="/index"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById("swag-here").scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                      inline: "nearest",
-                    });
+                    const swag = document.getElementById("swag-here");
+                    if (swag) {
+                      swag.scrollIntoView({
+                        behavior: "smooth",
+                        block: "end",
+                        inline: "start",
+                      });
+                    } else {
+                      window.location.href = "/index";
+                    }
                   }}
                 >
                   <i className="now-ui-icons education_glasses"></i>

@@ -10,7 +10,7 @@ import { Container, Row, Col } from "reactstrap";
 function Images() {
   return (
     <Wrapper>
-      <div className="section section-images">
+      <div className="section section-images" id="swag-here">
         <Container>
           <Row>
             <Col md="12">
@@ -36,24 +36,29 @@ function Images() {
           </Row>
         </Container>
       </div>
-      <div className="news-cont" id="swag-here">
+      <div className="news-cont">
         <News
           title="Check out my stash"
           date="May 4, 2020, 10:22:29 AM"
-          content="I got a total of 10 Exolts in the delirium league. Exchanged 2 of them
+          content="Got a total of 10 Exolts in the entire delirium league. Exchanged 2 of them
         into a bunch of chaos and bought myself some endgame atkspd Axe, Gloves
         with 20% dmg, a ring with Vulnerability curse on Hit and Pure Physical
-        Damage and Bleed. T16 maps are a walk in the park!"
+        Damage and Bleed. T16 maps are a walk in the park."
         />
         <News
           title="Got a good feeling"
           date="May 1, 2020, 12:22:29 AM"
-          content="This random mob just dropped dropped me an Exolt. I didn't wanna pick it up coz I already had so many Exolts I don't need them anymore. I don't want it to compensate my luck by not having a Mirror. WHAT I NEED IS A MIRROR. I got a good feeling that I'll get one today."
+          content="This random mob just dropped me an Exolt. Didn't wanna pick it up coz I already had so many Exolts I don't need them anymore. Don't want RNG to waste my luck on a lousy Exalt. I NEED MIRROR. I got a good feeling I'll get one today."
         />
         <News
           title="No Mirror yet"
           date="Apr 29, 2020, 11:10:29 PM"
-          content="I was doing this random T16 Map -- 40% delirium, bunch of scarabs and chisels. This fucking delirium boss appeared and one shotted me out of nowhere. I'm down from 86% to 76% at level 91. Better drop me a Mirror today or I'll be totally pissed."
+          content="I was doing this random T16 Map -- 40% delirium, bunch of scarabs and chisels. This fucking delirium boss appeared out of nowhere and one shotted me. I'm down from 86% to 76% at level 91. Better drop me a Mirror today or I'll be totally pissed."
+        />
+        <News
+          title="Sirus, Awakener of Worlds"
+          date="Apr 28, 2020, 9:10:29 PM"
+          content={`After hitting 91, I decided to hunt Sirus who was waiting at the center of the  Atlas. Killed him on my first try, didn't even break a sweat. So much for the "Awakener of worlds", I almost fell asleep on our fight.`}
         />
       </div>
     </Wrapper>
