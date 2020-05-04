@@ -1,8 +1,6 @@
-# testing Now UI Kit React. thanks to creativetim.
-
 # [Now UI Kit React - Free Bootstrap 4, React, React Hooks and Reactstrap UI Kit](https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-github-readme) ![version](https://img.shields.io/badge/version-1.0.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/now-ui-kit-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/now-ui-kit-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/now-ui-kit-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/now-ui-kit-react/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
-![Now UI Kit React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/now-ui-kit-react/opt_nuk_react_thumbnail.jpg)
+Testing Now UI Kit React. credits to creativetim.
 
 Now UI Kit React is a free Bootstrap 4, React, React Hooks and Reactstrap UI Kit provided for free by Invision and Creative Tim. It is a beautiful cross-platform UI kit featuring over 50 elements and 3 templates.
 
