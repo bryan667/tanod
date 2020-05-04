@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+import styled from "styled-components";
 
 // reactstrap components
 import { Container } from "reactstrap";
@@ -23,7 +24,7 @@ function IndexHeader() {
   });
 
   return (
-    <>
+    <StyledWrapper>
       <div
         className="page-header clear-filter"
         style={{
@@ -48,12 +49,22 @@ function IndexHeader() {
             <h1 className="h1-seo">
               <b>BgyTanod</b>
             </h1>
-            <h3>Farming Mirror of Kalandra Everyday</h3>
+            <h3>Farming Mirror Everyday</h3>
           </div>
         </Container>
       </div>
-    </>
+    </StyledWrapper>
   );
 }
 
 export default IndexHeader;
+
+const StyledWrapper = styled.div`
+  .page-header .content-center {
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #dfcf99;
+  }
+`;
