@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "availity-reactstrap-validation": "^2.6.1",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.4.1",
     "moment": "2.24.0",
     "node-sass": "4.12.0",
     "nouislider": "14.0.2",
@@ -45,7 +47,5 @@
   "optionalDependencies": {
     "typescript": "3.5.3"
   },
-  "devDependencies": {
-    "emailjs-com": "^2.4.1"
-  }
+  "devDependencies": {}
 }

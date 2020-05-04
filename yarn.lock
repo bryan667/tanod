@@ -1970,6 +1970,17 @@ autoprefixer@^9.4.9:
     postcss "^7.0.27"
     postcss-value-parser "^4.0.3"
 
+availity-reactstrap-validation@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/availity-reactstrap-validation/-/availity-reactstrap-validation-2.6.1.tgz#7a682322da18db63aeca10b9494cf0338688cf4c"
+  integrity sha512-Se9X7q1wV0jyOjCnieayUXltPPELNsQ2AdiETdH5yf1yyfcqDUsJ52rLhQ56LUIyoc1C3OjFqoi2YbfgnBqSFA==
+  dependencies:
+    babel-runtime "^6.26.0"
+    classnames "^2.2.6"
+    lodash "^4.17.10"
+    moment "^2.22.2"
+    prop-types "^15.6.2"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -2653,7 +2664,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.3:
+classnames@^2.2.3, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -6679,6 +6690,11 @@ moment@2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
+moment@^2.22.2:
+  version "2.25.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.2.tgz#0f521c1c99322cc55dee08678225fb4e3b4393ca"
+  integrity sha512-2BZ14aoZMfyeTmjPi2LHdPKLvb6v4uz8QruMFzHTWd1Rl98p3TWLK6GsRFqQoJOKDZmVetzYO1iU6u1QgGJelQ==
 
 move-concurrently@^1.0.1:
   version "1.0.1"

@@ -1,16 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styled from "styled-components";
+import {
+  AvForm,
+  AvGroup,
+  AvFeedback,
+  AvInput,
+} from "availity-reactstrap-validation";
 
 import * as emailjs from "emailjs-com";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Label, Spinner, Alert } from "reactstrap";
 class ContactForm extends Component {
-  state = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-  handleSubmit(e) {
+  state = { loading: false, success: false };
+
+  handleValidSubmit(e) {
+    this.setState({ loading: true });
     e.preventDefault();
     const { name, email, subject, message } = this.state;
     let templateParams = {
@@ -19,78 +22,92 @@ class ContactForm extends Component {
       subject: subject,
       message_html: `${name} --- ${message}`,
     };
-    emailjs.send(
-      process.env.REACT_APP_EMAIL_SERVICE_ID,
-      process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-      templateParams,
-      process.env.REACT_APP_EMAIL_USER_ID
-    );
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAIL_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAIL_USER_ID
+      )
+      .then((res) => {
+        this.form && this.form.reset();
+        this.setState({ loading: false });
+        this.setState({ success: true });
+        setTimeout(() => {
+          this.setState({ success: false });
+        }, 2000);
+      });
     this.resetForm();
   }
   resetForm() {
-    this.setState({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    this.setState({});
   }
+
+  handleInvalidSubmit() {}
+
   handleChange = (param, e) => {
     this.setState({ [param]: e.target.value });
   };
+
   render() {
+    const { loading, success } = this.state;
     return (
       <Wrapper>
         <h3 className="p-heading1">This better be important, or else</h3>
         <div className="the-form">
-          <Form onSubmit={this.handleSubmit.bind(this)}>
-            <FormGroup controlId="formBasicEmail">
-              <Label className="text-labels">Your email address</Label>
-              <Input
-                type="email"
-                name="email"
-                value={this.state.email}
-                className="text-primary"
-                onChange={this.handleChange.bind(this, "email")}
-                placeholder="Enter email"
-              />
-            </FormGroup>
-            <FormGroup controlId="formBasicName">
-              <Label className="text-labels">Name</Label>
-              <Input
-                type="text"
-                name="name"
-                value={this.state.name}
-                className="text-primary"
-                onChange={this.handleChange.bind(this, "name")}
-                placeholder="Name"
-              />
-            </FormGroup>
-            <FormGroup controlId="formBasicSubject">
-              <Label className="text-labels">Subject</Label>
-              <Input
-                type="text"
-                name="subject"
-                className="text-primary"
-                value={this.state.subject}
-                onChange={this.handleChange.bind(this, "subject")}
-                placeholder="Subject"
-              />
-            </FormGroup>
-            <FormGroup controlId="formBasicMessage">
-              <Label className="text-labels">Message</Label>
-              <Input
-                type="textarea"
-                name="message"
-                className="text-primary the-textarea"
-                value={this.state.message}
-                onChange={this.handleChange.bind(this, "message")}
-              />
-            </FormGroup>
-            <Button variant="primary" type="submit" className="button-here">
+          <AvForm
+            onValidSubmit={this.handleValidSubmit.bind(this)}
+            onInvalidSubmit={this.handleInvalidSubmit.bind(this)}
+            ref={(c) => (this.form = c)}
+          >
+            <AvGroup>
+              <Label className="text-labels" for="email">
+                Your email address
+              </Label>
+              <AvInput name="email" id="email" type="email" required />
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+
+            <AvGroup>
+              <Label className="text-labels" for="name">
+                Name
+              </Label>
+              <AvInput name="name" id="name" required />
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+
+            <AvGroup>
+              <Label className="text-labels" for="subject">
+                Subject
+              </Label>
+              <AvInput name="subject" id="subject" required />
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+
+            <AvGroup>
+              <Label className="text-labels" for="message">
+                Message
+              </Label>
+              <AvInput name="message" id="message" type="textarea" required />
+              <AvFeedback>This field is required</AvFeedback>
+            </AvGroup>
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={loading}
+              className="button-here"
+            >
               Submit
+              {loading && (
+                <Fragment>
+                  &nbsp;
+                  <Spinner size="sm" color="light" />
+                </Fragment>
+              )}
             </Button>
-          </Form>
+            {success && <Alert color="success">Message sent</Alert>}
+            {console.log("loading", this.state)}
+          </AvForm>
           <a
             className="discord"
             href="https://discord.gg/SrMvpj"
