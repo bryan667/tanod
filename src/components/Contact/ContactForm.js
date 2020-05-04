@@ -10,7 +10,7 @@ import {
 import * as emailjs from "emailjs-com";
 import { Button, Label, Spinner, Alert } from "reactstrap";
 class ContactForm extends Component {
-  state = { loading: false, success: false };
+  state = { loading: false, success: false, error: false };
 
   handleValidSubmit(e) {
     this.setState({ loading: true });
@@ -29,18 +29,24 @@ class ContactForm extends Component {
         templateParams,
         process.env.REACT_APP_EMAIL_USER_ID
       )
-      .then((res) => {
-        this.form && this.form.reset();
-        this.setState({ loading: false });
-        this.setState({ success: true });
-        setTimeout(() => {
-          this.setState({ success: false });
-        }, 2000);
-      });
-    this.resetForm();
-  }
-  resetForm() {
-    this.setState({});
+      .then(
+        (res) => {
+          this.form && this.form.reset();
+          this.setState({ loading: false, success: true }, () => {
+            setTimeout(() => {
+              this.setState({ success: false });
+            }, 3000);
+          });
+        },
+        function (error) {
+          console.log("error---", error);
+          this.setState({ error: true }, () => {
+            setTimeout(() => {
+              this.setState({ error: false });
+            }, 3000);
+          });
+        }
+      );
   }
 
   handleInvalidSubmit() {}
@@ -50,7 +56,7 @@ class ContactForm extends Component {
   };
 
   render() {
-    const { loading, success } = this.state;
+    const { loading, success, error } = this.state;
     return (
       <Wrapper>
         <h3 className="p-heading1">This better be important, or else</h3>
@@ -106,6 +112,7 @@ class ContactForm extends Component {
               )}
             </Button>
             {success && <Alert color="success">Message sent</Alert>}
+            {error && <Alert color="danger">wtf</Alert>}
             {console.log("loading", this.state)}
           </AvForm>
           <a
