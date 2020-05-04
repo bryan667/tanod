@@ -38,7 +38,7 @@ class ContactForm extends Component {
             }, 3000);
           });
         },
-        function (error) {
+        (error) => {
           console.log("error---", error);
           this.setState({ error: true }, () => {
             setTimeout(() => {
