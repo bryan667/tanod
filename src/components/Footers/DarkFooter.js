@@ -1,61 +1,49 @@
 /*eslint-disable*/
 import React from "react";
+import styled from "styled-components";
 
 // reactstrap components
 import { Container } from "reactstrap";
 
 function DarkFooter() {
   return (
-    <footer className="footer" data-background-color="black">
+    <Wrapper className="footer" data-background-color="black">
       <Container>
         <nav>
           <ul>
             <li>
-              <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Creative Tim
+              <a href="https://www.facebook.com/Awyisss" target="_blank">
+                Awyisss
               </a>
             </li>
             <li>
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
+                href="https://www.facebook.com/groups/the.brogrammers/"
                 target="_blank"
               >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://blog.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Blog
+                Brogrammers
               </a>
             </li>
           </ul>
         </nav>
         <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by{" "}
-          <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Invision
-          </a>
-          . Coded by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>
-          .
+          © {new Date().getFullYear()} | All Rights Reserved
         </div>
       </Container>
-    </footer>
+    </Wrapper>
   );
 }
 
 export default DarkFooter;
+
+const Wrapper = styled.footer`
+  background-color: #0c0b0b;
+
+  a {
+    color: #dfcf99 !important;
+  }
+
+  .copyright {
+    color: #dfcf99;
+  }
+`;

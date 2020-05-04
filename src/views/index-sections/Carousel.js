@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+import Dot from "./Dot";
 
 // reactstrap components
 import {
@@ -7,7 +9,7 @@ import {
   Col,
   Carousel,
   CarouselItem,
-  CarouselIndicators
+  CarouselIndicators,
 } from "reactstrap";
 
 // core components
@@ -15,19 +17,24 @@ import {
 const items = [
   {
     src: require("assets/img/bg1.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States"
+    altText: "Jun, you have fooled me",
+    caption: "Jun, you have fooled me",
+  },
+  {
+    src: require("assets/img/bg2.jpg"),
+    altText: "Chillin with ma homie, Zana",
+    caption: "Chillin with ma homie, Zana",
   },
   {
     src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States"
+    altText: "My dear friend, Alma",
+    caption: "My dear friend, Alma",
   },
   {
     src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States"
-  }
+    altText: "Swag",
+    caption: "Swag",
+  },
 ];
 
 function CarouselSection() {
@@ -49,16 +56,19 @@ function CarouselSection() {
     const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
-  const goToIndex = newIndex => {
+  const goToIndex = (newIndex) => {
     if (animating) return;
     setActiveIndex(newIndex);
   };
   return (
-    <>
+    <Wrapper>
       <div className="section" id="carousel">
         <Container>
           <div className="title">
-            <h4>Carousel</h4>
+            <h2>
+              <Dot />
+              Pics
+            </h2>
           </div>
           <Row className="justify-content-center">
             <Col lg="8" md="12">
@@ -72,14 +82,20 @@ function CarouselSection() {
                   activeIndex={activeIndex}
                   onClickHandler={goToIndex}
                 />
-                {items.map(item => {
+                {items.map((item) => {
                   return (
                     <CarouselItem
                       onExiting={onExiting}
                       onExited={onExited}
                       key={item.src}
                     >
-                      <img src={item.src} alt={item.altText} />
+                      <div
+                        className="center"
+                        style={{
+                          background: "url(" + item.src + ") no-repeat center",
+                          backgroundSize: "contain",
+                        }}
+                      />
                       <div className="carousel-caption d-none d-md-block">
                         <h5>{item.caption}</h5>
                       </div>
@@ -89,8 +105,8 @@ function CarouselSection() {
                 <a
                   className="carousel-control-prev"
                   data-slide="prev"
-                  href="#pablo"
-                  onClick={e => {
+                  href="#wat"
+                  onClick={(e) => {
                     e.preventDefault();
                     previous();
                   }}
@@ -101,8 +117,8 @@ function CarouselSection() {
                 <a
                   className="carousel-control-next"
                   data-slide="next"
-                  href="#pablo"
-                  onClick={e => {
+                  href="#wat"
+                  onClick={(e) => {
                     e.preventDefault();
                     next();
                   }}
@@ -115,8 +131,37 @@ function CarouselSection() {
           </Row>
         </Container>
       </div>
-    </>
+    </Wrapper>
   );
 }
 
 export default CarouselSection;
+
+const Wrapper = styled.div`
+  background-color: #000000;
+
+  .title {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: "FontinSmallCaps", Verdana, Arial, Helvetica, sans-serif;
+    color: #cac2a8;
+  }
+
+  .section {
+    background-color: #000000;
+  }
+
+  .carousel-caption {
+    color: #ffefba;
+    text-shadow: black 0px 0px 5px;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+  }
+`;

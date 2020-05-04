@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 // reactstrap components
 import {
   Collapse,
@@ -21,7 +22,7 @@ function IndexNavbar() {
         document.documentElement.scrollTop > 399 ||
         document.body.scrollTop > 399
       ) {
-        setNavbarColor("");
+        setNavbarColor("black-nav");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
@@ -34,8 +35,9 @@ function IndexNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+
   return (
-    <>
+    <Wrapper>
       {collapseOpen ? (
         <div
           id="bodyClick"
@@ -73,15 +75,21 @@ function IndexNavbar() {
             </button>
           </div>
           <Collapse
-            className="justify-content-end"
+            className="justify-content-end the-collapse"
             isOpen={collapseOpen}
             navbar
           >
             <Nav navbar>
               <NavItem>
                 <NavLink href="/" onClick={() => {}}>
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons location_world"></i>
                   <p>Home</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/" onClick={() => {}}>
+                  <i className="now-ui-icons users_single-02"></i>
+                  <p>About me</p>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -89,20 +97,20 @@ function IndexNavbar() {
                   href="#wat"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById("download-section").scrollIntoView({
+                    document.getElementById("swag-here").scrollIntoView({
                       behavior: "smooth",
-                      block: "start",
+                      block: "center",
                       inline: "nearest",
                     });
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
-                  <p>About me</p>
+                  <i className="now-ui-icons education_glasses"></i>
+                  <p>Swag</p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#wat" onClick={() => {}}>
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                <NavLink href="/" onClick={() => {}}>
+                  <i className="now-ui-icons ui-2_chat-round"></i>
                   <p>Contact me</p>
                 </NavLink>
               </NavItem>
@@ -123,8 +131,37 @@ function IndexNavbar() {
           </Collapse>
         </Container>
       </Navbar>
-    </>
+    </Wrapper>
   );
 }
 
 export default IndexNavbar;
+
+const Wrapper = styled.div`
+  .navbar a:not(.btn):not(.dropdown-item) {
+    font-weight: 600;
+    color: #dfcf99;
+    text-shadow: black 0px 0px 5px;
+  }
+
+  .navbar-toggler {
+    font-weight: 600;
+    color: #dfcf99;
+    text-shadow: black 0px 0px 5px;
+  }
+
+  .black-nav {
+    background-color: #0c0b0b !important;
+  }
+
+  .the-collapse {
+    background: #000000;
+  }
+
+  .the-collapse:before {
+    @media screen and (max-width: 991px) {
+      background: linear-gradient(#101010, #2c2c2c 80%);
+      background-image: linear-gradient(rgb(4, 4, 4), rgb(44, 44, 44) 80%);
+    }
+  }
+`;
