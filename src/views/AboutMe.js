@@ -5,9 +5,8 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 import Images from "./index-sections/Images.js";
-import Carousel from "./index-sections/Carousel.js";
 
-function Index() {
+function AboutMe() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -26,7 +25,6 @@ function Index() {
         <IndexHeader />
         <div className="main">
           <Images />
-          <Carousel />
         </div>
         <DarkFooter />
       </div>
@@ -34,4 +32,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default AboutMe;

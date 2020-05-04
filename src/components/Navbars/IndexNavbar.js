@@ -87,7 +87,7 @@ function IndexNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" onClick={() => {}}>
+                <NavLink href="/about-me" onClick={() => {}}>
                   <i className="now-ui-icons users_single-02"></i>
                   <p>About me</p>
                 </NavLink>
@@ -109,7 +109,7 @@ function IndexNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" onClick={() => {}}>
+                <NavLink href="/contact-me" onClick={() => {}}>
                   <i className="now-ui-icons ui-2_chat-round"></i>
                   <p>Contact me</p>
                 </NavLink>
