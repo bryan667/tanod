@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 
   .title {
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 2px;
   }
 
@@ -48,6 +48,12 @@ const Wrapper = styled.div`
     color: #585858;
     font-style: italic;
     font-size: 90%;
+
+    @media (max-width: 450px) {
+      position: relative;
+      right: 0px;
+      top: 0px;
+    }
   }
 
   .content {

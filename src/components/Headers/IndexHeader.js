@@ -100,6 +100,10 @@ const StyledWrapper = styled.div`
     color: #dfcf99;
   }
 
+  .n-logo {
+    cursor: pointer;
+  }
+
   h1 {
     margin-bottom: 10px;
   }

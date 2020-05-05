@@ -10,7 +10,7 @@ function AboutMeDetails() {
     <StyledWrapper>
       <div className="container">
         <News
-          title="I'm a Level 92 Lacerator Gladiator"
+          title="I'm a Level 93 Lacerate Gladiator"
           content={
             <>
               <div>

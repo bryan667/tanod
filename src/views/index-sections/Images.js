@@ -38,6 +38,11 @@ function Images() {
       </div>
       <div className="news-cont">
         <News
+          title="Just Hit 93 Bois"
+          date="May 5, 2020, 10:00:00 PM"
+          content="Just hit 93 today. I bet Atlas bosses are peeing their pants right now coz tis the season when I start hunting them. (Looking at you Sirus) Better drop me a Mirror or I'll keep coming back to haunt your dreams."
+        />
+        <News
           title="Check out my stash"
           date="May 4, 2020, 10:22:29 AM"
           content="Got a total of 10 Exolts in the entire delirium league. Exchanged 2 of them

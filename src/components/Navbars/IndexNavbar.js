@@ -58,7 +58,7 @@ function IndexNavbar() {
               BgyTanod
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Level 92 Lacerate Gladiator
+              Level 93 Lacerate Gladiator
             </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"

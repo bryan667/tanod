@@ -16,24 +16,52 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg1.jpg"),
+    src:
+      "https://lh3.googleusercontent.com/XvxO2LaHvL6W9_dRuiU6gbbU73NCHZ8_I-glI4AoY8TE5fdiwb_YaEGRmvcLveAOq8DQhGWx-mpeV3DjxjODo6RWoW9uZz78i-sxSW7b0xCRKOzFTBvXrog4MBjdrBE_eDNr7Uk7nQ=w2400",
     altText: "Jun, you have fooled me",
     caption: "Jun, you have fooled me",
   },
   {
-    src: require("assets/img/bg2.jpg"),
+    src:
+      "https://lh3.googleusercontent.com/kU81jJFRhpfhX0mGAs2hV7kCmGLKOVm2Ij4z1cKWTmB5ILfhHwQsIoFMNhJyxe6AlMNGYQIIL5cZWQC_WS69KWsHP_dZdMIqZ3C7NnPnuZjrRuEkqRr_OjseE7Z1QhohrqU-fE4h7g=w2400",
     altText: "Chillin with ma homie, Zana",
     caption: "Chillin with ma homie, Zana",
   },
   {
-    src: require("assets/img/bg3.jpg"),
+    src:
+      "https://lh3.googleusercontent.com/xwNiqcNYvIjJH96fADsJRFWIta9ILfcH85xhvrulVgLzQfSiq7BpRQx6dPFtlxr6wIhA4oovUmEha-0_dzKSczkzydYFEr7xtMc96CHUDji6WSpKFat4OctDeHUgph9pdC9k-vzeiQ=w2400",
     altText: "My best pal, Alma",
     caption: "My best pal, Alma",
   },
   {
-    src: require("assets/img/bg4.jpg"),
+    src:
+      "https://lh3.googleusercontent.com/5U146oVlVzsqxhdN4pUNPX0nyuFt5tYJ3i3kgef852z630gX_Nl13N-x5HSHN5w-mjeFU16eQkMqj5XydLWgOp0QUhZQNUOQlFygqdxWdu1HBr4NT7sOIPcjyK6QYf_9LrPmVATsHg=w2400",
     altText: "Swag",
     caption: "Swag",
+  },
+  {
+    src:
+      "https://lh3.googleusercontent.com/BvBXLRMPNsU8dMiX_iuE7JsT7mI2Q1hG6X1vHEqeJjHHodNOxvBpfZrOt8rwsoayubvdOgScX1KxKvV-AC7PP_3hQwLTk-SYWp_EbmamSltNtjzzbm-D-oC5GPC_rgTfWv8BUa3DJg=w2400",
+    altText: "Boys' Night Out",
+    caption: "Boys' Night Out",
+  },
+  {
+    src:
+      "https://lh3.googleusercontent.com/xS0TygeJ-bG1w0TeqZW5BKDjOKuoIClPrhrhWcDwfMWL8uPShfdUs-yj31k50Lp1zcSpY41YtCPVB6g1u4Zo9j2MwIAV7ShQrwfNidk0P0lOQ24egyL3VXXTaWuMtkQxHjSpbK8sfg=w2400",
+    altText: "Me & the squad preppin for the hunt",
+    caption: "Me & the squad preppin for the hunt",
+  },
+  {
+    src:
+      "https://lh3.googleusercontent.com/1UL9YAieUMJJbfq6h1T4jy2Kqa4kgNd1dIeRqrmij5Jci8kQGU5ytvt0uw-3ORBITezUq-hFy5ZZwvgEX7tnkRussyY-CdGzNPWAoQy5-k3INpfdl9AK1bff---SdoCCPXmD25E1ww=w2400",
+    altText: "These Fucbois",
+    caption: "These Fucbois",
+  },
+  {
+    src:
+      "https://lh3.googleusercontent.com/Sgp46YsUtLjODlHBNOKm4GoDRJ13Drv4Hi4GkQzrcaFyFs6x0QUryqJeWXxL0nrkGxITgEKnfmDqz6-OyBJpJHlN-DmFQwHCcYIjzw6LJODLnnc6W0cRGeVre4gMdD8v7jG6B7XM5w=w2400",
+    altText: "Hate it when this happens",
+    caption: "Hate it when this happens",
   },
 ];
 
@@ -96,7 +124,7 @@ function CarouselSection() {
                           backgroundSize: "contain",
                         }}
                       />
-                      <div className="carousel-caption d-none d-md-block">
+                      <div className="carousel-caption d-md-block">
                         <h5>{item.caption}</h5>
                       </div>
                     </CarouselItem>
@@ -156,6 +184,10 @@ const Wrapper = styled.div`
   .carousel-caption {
     color: #ffefba;
     text-shadow: black 0px 0px 5px;
+
+    @media (max-width: 450px) {
+      font-size: 12px;
+    }
   }
 
   .center {
@@ -163,5 +195,9 @@ const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     height: 600px;
+
+    @media (max-width: 450px) {
+      height: 500px;
+    }
   }
 `;
